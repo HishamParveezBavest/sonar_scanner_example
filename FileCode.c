@@ -10,20 +10,14 @@ int access(const char* file, const char* status) {
 
 /*void fopen_with_toctou(const char* file)
 {
-    if (access(file, "F_OK") == -1 && errno == ENOENT) 
-    {
+    FILE* f = fopen(file, "w"); // NonCompliant
+    if (NULL == f) {
 
-        FILE* f = fopen(file, "w"); // Noncompliant
-        if (NULL == f) {
-            /* Handle error */
-        }
-
-        if (fclose(f) == EOF) {
-            /* Handle error */
-        }
     }
-}
-*/
+    if (fclose(f) == EOF) {
+    }
+}*/
+
 
 void open_without_toctou(const char* file) {
     FILE* f = fopen(file, "wx"); // Compliant
