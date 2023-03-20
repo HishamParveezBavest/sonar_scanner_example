@@ -5,7 +5,7 @@
 #include<botan/rng.h>
 
 
-void non_encryption(void)
+/*void non_encryption(void)
 {
 
 	Botan::Cipher_Mode::create("AES-256/ECB", Botan::ENCRYPTION);       
@@ -15,6 +15,7 @@ void non_encryption(void)
 	Botan::RSA_PrivateKey rsaKey(*rng.get(), 2048);
 
 }
+*/
 
 void valid_encryption(void)
 {

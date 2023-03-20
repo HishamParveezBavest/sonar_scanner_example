@@ -8,7 +8,7 @@ int access(const char* file, const char* status) {
     return -1;
 }
 
-void fopen_with_toctou(const char* file)
+/*void fopen_with_toctou(const char* file)
 {
     if (access(file, "F_OK") == -1 && errno == ENOENT) 
     {
@@ -23,6 +23,7 @@ void fopen_with_toctou(const char* file)
         }
     }
 }
+*/
 
 void open_without_toctou(const char* file) {
     FILE* f = fopen(file, "wx"); // Compliant
